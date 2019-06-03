@@ -1,0 +1,49 @@
+#projectsActive {
+    top: 90px;
+    height: 100vh;
+}
+
+#projectsHidden {
+    top: 99vh;
+    height: 0vh;
+    overflow: hidden;
+    border: none;
+}
+
+#title {
+    color: inherit;
+    margin-top: 100px;
+    margin-left: 20px;
+}
+
+.projects {
+    position: absolute;
+    color: white;
+    text-align: left;
+    padding-left: 15%;
+    padding-right: 15%;
+    background: rgba(63, 63, 63, 0.8);
+    border-top: 1px solid gray;
+    transition: all .2s ease-in-out;
+    left: 0;
+    width: 100vw;
+}
+
+#project-content {
+    max-height: 70%;
+    overflow: auto;
+}
+
+@media(prefers-color-scheme: light) {
+    .projects {
+        color: black;
+        background: rgba(192, 192, 192, 0.8);
+    }
+}
+
+@media(prefers-color-scheme: dark) {
+    .projects {
+        color: white;
+        background: rgba(63, 63, 63, 0.8)
+    }
+}
