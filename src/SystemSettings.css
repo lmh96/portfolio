@@ -1,0 +1,68 @@
+.settingsContainer {
+    position: absolute;
+    height: 300px;
+    width: 200px;
+    transition: all .5s ease-in-out;
+    top: calc(50% - 150px);
+    left: calc(50% - 100px);
+    background: rgba(63,63,63,0.8);
+    border: gray 1px solid;
+    border-radius: 10px;
+    z-index: 99;
+}
+
+.settingsConatinerHidden {
+    position: absolute;
+    height: 0;
+    width: 0;
+    transition: all .5s ease-in-out;
+    top: 50%;
+    left: 50%;
+    overflow: hidden;
+    z-index: 99;
+}
+
+.toggleButton {
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 32px;
+    color: white;
+}
+
+.exitButton {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    background: none;
+    border: none;
+    outline: none;font-size: 20px;
+    color: white;
+    text-decoration: underline;
+}
+
+@media(prefers-color-scheme: light) {
+    .settingsContainer {
+        color: black;
+        background: rgba(192, 192, 192, 0.8);
+    }
+    .toggleButton {
+        color: black;
+    }
+    .exitButton {
+        color: black;
+    }
+}
+
+@media(prefers-color-scheme: dark) {
+    .settingsContainer {
+        color: white;
+        background: rgba(63, 63, 63, 0.8)
+    }
+    .toggleButton {
+        color: white;
+    }
+    .exitButton {
+        color: white;
+    }
+}

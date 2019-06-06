@@ -8,16 +8,12 @@ function Orbit(props) {
         width: props.oDiameter,
         top: 'calc(50% - ' + ((props.oDiameter / 2) + 1) + 'px)',
         left: 'calc(50% - ' + ((props.oDiameter / 2) + 1) + 'px',
+        animation: 'spin-right ' + props.dur + ' linear infinite',
     }
 
-    if(props.active) {
-        orbit.animation = 'spin-right ' + props.dur + ' linear infinite'
-    }
-    else {
-        orbit.animation = 'spin-right 0s linear infinite';
-    }
     if(props.visible) {
-        orbit.border = '';
+        orbit.borderStyle = 'dashed';
+        orbit.borderWidth = 1;
     }
     else {
         orbit.border = 'none';

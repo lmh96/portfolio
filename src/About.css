@@ -1,11 +1,11 @@
 #aboutActive {
     top: 90px;
-    height: 100vh;
+    height: calc(100% - 90px);
 }
 
 #aboutHidden {
-    top: 99vh;
-    height: 0vh;
+    top: 100vh;
+    height: calc(100% - 90px);
     overflow: hidden;
     border: none;
 }

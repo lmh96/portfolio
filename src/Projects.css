@@ -1,13 +1,11 @@
 #projectsActive {
     top: 90px;
-    height: 100vh;
+    height: calc(100% - 90px);
 }
 
 #projectsHidden {
-    top: 99vh;
-    height: 0vh;
-    overflow: hidden;
-    border: none;
+    top: 100vh;
+    height: calc(100% - 90px);
 }
 
 #title {
@@ -30,7 +28,7 @@
 }
 
 #project-content {
-    max-height: 70%;
+    max-height: calc(100% - 160px);
     overflow: auto;
 }
 

@@ -5,12 +5,16 @@ import Header from './Header.js';
 import Background from './Background.js';
 import About from './About.js';
 import Projects from './Projects.js';
+import SystemSettings from './SystemSettings.js';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       current: 'main',
+      settingsVisible: false,
+      hasVisibleOrbits: false,
+      areSpinning: true,
     }
   }
 
@@ -40,13 +44,56 @@ class App extends React.Component {
     }
   }
 
+  toggleSettingsClick = () => {
+    if(this.state.settingsVisible) {
+      this.setState({
+        settingsVisible: false,
+      })
+    }
+    else {
+      this.setState({
+        settingsVisible: true,
+      })
+    }
+  }
+
+  toggleOrbits = () => {
+    if(this.state.hasVisibleOrbits) {
+      this.setState({
+        hasVisibleOrbits: false,
+      })
+    }
+    else {
+      this.setState({
+        hasVisibleOrbits: true,
+      })
+    }
+  }
+
+  toggleAnimation = () => {
+    if(this.state.areSpinning) {
+      this.setState({
+        areSpinning: false,
+      })
+    }
+    else {
+      this.setState({
+        areSpinning: true,
+      })
+    }
+  }
+
   render() {
     return (
       <div className="App" >
         <Header aboutClick={this.aboutClick} projectClick={this.projectClick}></Header>
-        <Background className={this.state.current === 'main' ? 'bgCenter' : 'bgTop'}></Background>
+        <Background className={this.state.current === 'main' ? 'bgCenter' : 'bgTop'} centerClick={this.toggleSettingsClick} 
+          areSpinning={this.state.areSpinning} hasVisibleOrbits={this.state.hasVisibleOrbits}></Background>
         <About className={this.state.current === 'about' ? 'aboutActive' : 'aboutHidden'}></About>
         <Projects className={this.state.current === 'projects' ? 'projectsActive' : 'projectsHidden'}></Projects>
+        <SystemSettings className={this.state.settingsVisible ? 'settingsContainer' : 'settingsConatinerHidden'} toggleSettingsClick={this.toggleSettingsClick} 
+          orbitsClick={this.toggleOrbits} orbits={this.state.hasVisibleOrbits}
+          animateClick={this.toggleAnimation} animate={this.state.areSpinning}></SystemSettings>
       </div>
     );
   }

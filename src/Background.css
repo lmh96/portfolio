@@ -1,13 +1,23 @@
 .center {
     position: absolute;
     border-radius: 100%;
-    height: 100px;
-    width: 100px;
+    height: 120px;
+    width: 120px;
     border: 3px solid white;
     background: black;
-    top: calc(50% - 53px);
-    left: calc(50% - 53px);
+    color: none;
+    font-size: 109px;
+    line-height: 100px;
+    outline: none;
+    top: calc(50% - 63px);
+    left: calc(50% - 63px);
     z-index: 15;
+    transition: all .2s ease-in-out;
+}
+
+.center:hover {
+    color: white;
+    border: none;
 }
 
 .bgTop {
@@ -32,6 +42,11 @@
     .center {
         border: 3px solid black;
         background: white;
+        color: white;
+    }
+    .center:hover {
+        color: black;
+        border: none;
     }
     .orbit {
         border: 1px dashed black;
@@ -42,6 +57,11 @@
     .center {
         border: 3px solid white;
         background: black;
+        color: black;
+    }
+    .center:hover {
+        color: white;
+        border: none;
     }
     .orbit {
         border: 1px dashed white;
