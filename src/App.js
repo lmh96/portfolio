@@ -16,6 +16,7 @@ class App extends React.Component {
       hasVisibleOrbits: false,
       areSpinning: true,
       myProjects: [],
+      allRingsVisible: false,
     }
   }
 
@@ -84,6 +85,19 @@ class App extends React.Component {
     }
   }
 
+  toggleAllRings = () => {
+    if(this.state.allRingsVisible) {
+      this.setState({
+        allRingsVisible: false,
+      })
+    }
+    else {
+      this.setState({
+        allRingsVisible: true
+      })
+    }
+  }
+
   componentDidMount() {
     fetch('/api/projects').then(res => res.json()).then((result) => {
       console.log(result);
@@ -98,12 +112,13 @@ class App extends React.Component {
       <div className="App" >
         <Header aboutClick={this.aboutClick} projectClick={this.projectClick}></Header>
         <Background className={this.state.current === 'main' ? 'bgCenter' : 'bgTop'} centerClick={this.toggleSettingsClick} 
-          areSpinning={this.state.areSpinning} hasVisibleOrbits={this.state.hasVisibleOrbits}></Background>
+          areSpinning={this.state.areSpinning} hasVisibleOrbits={this.state.hasVisibleOrbits} visibleRings={this.state.allRingsVisible}></Background>
         <About className={this.state.current === 'about' ? 'aboutActive' : 'aboutHidden'}></About>
         <Projects className={this.state.current === 'projects' ? 'projectsActive' : 'projectsHidden'} myProjects={this.state.myProjects}></Projects>
         <SystemSettings className={this.state.settingsVisible ? 'settingsContainer' : 'settingsConatinerHidden'} toggleSettingsClick={this.toggleSettingsClick} 
           orbitsClick={this.toggleOrbits} orbits={this.state.hasVisibleOrbits}
-          animateClick={this.toggleAnimation} animate={this.state.areSpinning}></SystemSettings>
+          animateClick={this.toggleAnimation} animate={this.state.areSpinning}
+          ringsClick={this.toggleAllRings} rings={this.state.allRingsVisible}></SystemSettings>
       </div>
     );
   }

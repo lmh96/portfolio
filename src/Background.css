@@ -6,7 +6,8 @@
     border: 3px solid white;
     background: black;
     color: none;
-    font-size: 109px;
+    font-size: 0px;
+    padding: 0;
     line-height: 100px;
     outline: none;
     top: calc(50% - 63px);
@@ -16,6 +17,7 @@
 }
 
 .center:hover {
+    font-size: 120px;
     color: white;
     border: none;
 }

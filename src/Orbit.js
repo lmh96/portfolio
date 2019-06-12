@@ -32,9 +32,20 @@ function Orbit(props) {
         planet.left = 'calc(100% - ' + ((props.pDiameter / 2) + 2) + 'px)';
     }
 
+    let totalRingDiameter = props.pDiameter + (props.rDiameter * 2) + (props.rDistance * 2)
+    let ring = {
+        height: totalRingDiameter,
+        width: 0,
+        padding: 0,
+        top: 'calc(50% - ' + ((totalRingDiameter / 2) + 1) + 'px',
+        transform: 'rotate(' + props.rRotation + 'deg)',
+    }
+
     return(
         <div className={props.className} style={orbit}>
-            <div className='planet' style={planet}></div>
+            <div className='planet' style={planet}>
+            {props.rDiameter === 0 ? false : <div className='ring' style={ring}></div>}
+            </div>
         </div>
     );
 }

@@ -13,6 +13,15 @@
     z-index: 99;
 }
 
+.ring {
+    position: absolute;
+    border: 1px solid white;
+    border-radius: 100%;
+    background: none;
+    left: calc(50% - 1px);
+    transform: rotate(345deg);
+}
+
 @media(prefers-color-scheme: light) {
     .orbit {
         border-color: black;
@@ -21,6 +30,10 @@
     .planet {
         border: 2px solid black;
         background: white;
+    }
+
+    .ring {
+        border: 1px solid black;
     }
 }
 
@@ -32,6 +45,10 @@
     .planet {
         border: 2px solid white;
         background: black;
+    }
+
+    .ring {
+        border: 1px solid white;
     }
 }
 
