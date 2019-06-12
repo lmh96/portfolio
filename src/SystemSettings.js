@@ -12,6 +12,8 @@ function SystemSettings(props) {
             <button className='toggleButton' onClick={props.animateClick}>{props.animate ? <i class="far fa-check-circle"></i> : <i class="far fa-circle"></i>}</button><br></br><br></br>
             show all rings:
             <button className='toggleButton' onClick={props.ringsClick}>{props.rings ? <i class="far fa-check-circle"></i> : <i class="far fa-circle"></i>}</button><br></br><br></br>
+            show pluto:
+            <button className='toggleButton' onClick={props.plutoClick}>{props.pluto ? <i class="far fa-check-circle"></i> : <i class="far fa-circle"></i>}</button><br></br><br></br>
         </div>
             )
         }

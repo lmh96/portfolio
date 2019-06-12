@@ -11,7 +11,7 @@ function Orbit(props) {
         animation: 'spin-right ' + props.dur + ' linear infinite',
     }
 
-    if(props.visible) {
+    if (props.visible) {
         orbit.borderStyle = 'dashed';
         orbit.borderWidth = 1;
     }
@@ -25,7 +25,7 @@ function Orbit(props) {
         top: 'calc(50% - ' + ((props.pDiameter / 2) + 2) + 'px)',
     }
 
-    if(props.start === 'left') {
+    if (props.start === 'left') {
         planet.right = 'calc(100% - ' + ((props.pDiameter / 2) + 2) + 'px)';
     }
     else {
@@ -41,11 +41,63 @@ function Orbit(props) {
         transform: 'rotate(' + props.rRotation + 'deg)',
     }
 
-    return(
+    let planetaryOrbitDiameter = props.pDiameter * 3
+    let planetaryOrbit = {
+        height: planetaryOrbitDiameter,
+        width: planetaryOrbitDiameter,
+        top: 'calc(50% - ' + (planetaryOrbitDiameter / 2) + 'px)',
+        animation: 'spin-right 10s linear infinite',
+    }
+
+    if(props.visible) {
+        planetaryOrbit.borderStyle = 'dashed';
+        planetaryOrbit.borderWidth = 1;
+    }
+    else {
+        planetaryOrbit.border = 'none';
+    }
+
+    if(props.dur === '0s') {
+        planetaryOrbit.animation = 'spin-right 0s linear infinite';
+    }
+    else {
+        planetaryOrbit.animation = 'spin-right 10s linear infinite';
+    }
+
+    if (props.start === 'left') {
+        planetaryOrbit.right = 'calc(100% - ' + ((planetaryOrbitDiameter / 2) + 1) + 'px)';
+    }
+    else {
+        planetaryOrbit.left = 'calc(100% - ' + ((planetaryOrbitDiameter / 2) + 1) + 'px)';
+    }
+
+    let primary = {
+        height: props.pDiameter,
+        width: props.pDiameter,
+        top: 'calc(50% - ' + ((props.pDiameter / 2) + 2) + 'px)',
+        right: 'calc(100% - ' + ((props.pDiameter / 2) + 2) + 'px)',
+    }
+
+    let secondaryDiameter = props.pDiameter * .75;
+    let secondary = {
+        height: secondaryDiameter,
+        width: secondaryDiameter,
+        top: 'calc(50% - ' + ((secondaryDiameter / 2) + 2) + 'px)',
+        left: 'calc(100% - ' + ((secondaryDiameter / 2) + 2) + 'px)',
+    }
+
+    return (
         <div className={props.className} style={orbit}>
-            <div className='planet' style={planet}>
-            {props.rDiameter === 0 ? false : <div className='ring' style={ring}></div>}
-            </div>
+            {props.isBiPlanetary ?
+                <div className={props.className} style={planetaryOrbit}>
+                    <div className='planet' style={primary}></div>
+                    <div className='planet' style={secondary}></div>
+                </div>
+                :
+                <div className='planet' style={planet}>
+                    {props.rDiameter === 0 ? false : <div className='ring' style={ring}></div>}
+                </div>
+            }
         </div>
     );
 }
