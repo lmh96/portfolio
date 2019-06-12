@@ -10,6 +10,7 @@
     border-color: white;
     background: black;
     border-radius: 100%;
+    transform: rotate(90deg);
     z-index: 99;
 }
 
