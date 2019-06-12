@@ -46,7 +46,7 @@ function Orbit(props) {
         height: planetaryOrbitDiameter,
         width: planetaryOrbitDiameter,
         top: 'calc(50% - ' + (planetaryOrbitDiameter / 2) + 'px)',
-        animation: 'spin-right 10s linear infinite',
+        animation: 'spin-right 6s linear infinite',
     }
 
     if(props.visible) {
@@ -61,7 +61,7 @@ function Orbit(props) {
         planetaryOrbit.animation = 'spin-right 0s linear infinite';
     }
     else {
-        planetaryOrbit.animation = 'spin-right 10s linear infinite';
+        planetaryOrbit.animation = 'spin-right 6s linear infinite';
     }
 
     if (props.start === 'left') {
@@ -78,7 +78,7 @@ function Orbit(props) {
         right: 'calc(100% - ' + ((props.pDiameter / 2) + 2) + 'px)',
     }
 
-    let secondaryDiameter = props.pDiameter * .75;
+    let secondaryDiameter = props.pDiameter * .6;
     let secondary = {
         height: secondaryDiameter,
         width: secondaryDiameter,
