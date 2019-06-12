@@ -24,7 +24,7 @@
     height: 100vh;
     width: 100vw;
     position: absolute;
-    top: calc(-50% + 90px);
+    top: calc(-50% + 110px);
     align-content: center;
     transition: all .3s ease-in-out;
 }

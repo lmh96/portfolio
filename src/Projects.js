@@ -9,40 +9,21 @@ function Projects(props) {
                 Projects
             </h1>
             <div id='project-content'>
-                <div style={{maxWidth: '60%', height: 201, borderBottom: '1px solid white'}}>
-                    <image style={{float: 'left', height: 200, width: 200, border: '1px solid white', marginRight: '10px'}}></image>
+                {props.myProjects.map(project => (
+                    <div className='project'>
+                        <img className='projectImg' src={project.image} alt='X'></img>
+                        <h2>{project.title}</h2>
+                        <p>{project.description}</p>
+                        <a className='projectGitBtn' href={project.git} target='__blank'><i class="fas fa-code"></i></a>
+                        <a className='projectDeployBtn' href={project.deploy} target='__blank'><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                ))}
+                <div className='project'>
+                    <image className='projectImg'></image>
                     <h2>Test Project</h2>
                     <p>sdfasdf asdf adf asdf asf kqwef eiuvh wfuhv wifuvh wdfhv dwfvhwfuv wduhv wduf v wfuv hwfvuhwfvuwefv  wdfuvhwdfv uwhfv wfv fevuhwefvwf</p>
-                </div>
-                <div style={{maxWidth: '60%', height: 201, borderBottom: '1px solid white'}}>
-                    <image style={{float: 'left', height: 200, width: 200, border: '1px solid white', marginRight: '10px'}}></image>
-                    <h2>Test Project</h2>
-                    <p>sdfasdf asdf adf asdf asf kqwef eiuvh wfuhv wifuvh wdfhv dwfvhwfuv wduhv wduf v wfuv hwfvuhwfvuwefv  wdfuvhwdfv uwhfv wfv fevuhwefvwf</p>
-                </div>
-                <div style={{maxWidth: '60%', height: 201, borderBottom: '1px solid white'}}>
-                    <image style={{float: 'left', height: 200, width: 200, border: '1px solid white', marginRight: '10px'}}></image>
-                    <h2>Test Project</h2>
-                    <p>sdfasdf asdf adf asdf asf kqwef eiuvh wfuhv wifuvh wdfhv dwfvhwfuv wduhv wduf v wfuv hwfvuhwfvuwefv  wdfuvhwdfv uwhfv wfv fevuhwefvwf</p>
-                </div>
-                <div style={{maxWidth: '60%', height: 201, borderBottom: '1px solid white'}}>
-                    <image style={{float: 'left', height: 200, width: 200, border: '1px solid white', marginRight: '10px'}}></image>
-                    <h2>Test Project</h2>
-                    <p>sdfasdf asdf adf asdf asf kqwef eiuvh wfuhv wifuvh wdfhv dwfvhwfuv wduhv wduf v wfuv hwfvuhwfvuwefv  wdfuvhwdfv uwhfv wfv fevuhwefvwf</p>
-                </div>
-                <div style={{maxWidth: '60%', height: 201, borderBottom: '1px solid white'}}>
-                    <image style={{float: 'left', height: 200, width: 200, border: '1px solid white', marginRight: '10px'}}></image>
-                    <h2>Test Project</h2>
-                    <p>sdfasdf asdf adf asdf asf kqwef eiuvh wfuhv wifuvh wdfhv dwfvhwfuv wduhv wduf v wfuv hwfvuhwfvuwefv  wdfuvhwdfv uwhfv wfv fevuhwefvwf</p>
-                </div>
-                <div style={{maxWidth: '60%', height: 201, borderBottom: '1px solid white'}}>
-                    <image style={{float: 'left', height: 200, width: 200, border: '1px solid white', marginRight: '10px'}}></image>
-                    <h2>Test Project</h2>
-                    <p>sdfasdf asdf adf asdf asf kqwef eiuvh wfuhv wifuvh wdfhv dwfvhwfuv wduhv wduf v wfuv hwfvuhwfvuwefv  wdfuvhwdfv uwhfv wfv fevuhwefvwf</p>
-                </div>
-                <div style={{maxWidth: '60%', height: 201, borderBottom: '1px solid white'}}>
-                    <image style={{float: 'left', height: 200, width: 200, border: '1px solid white', marginRight: '10px'}}></image>
-                    <h2>Test Project</h2>
-                    <p>sdfasdf asdf adf asdf asf kqwef eiuvh wfuhv wifuvh wdfhv dwfvhwfuv wduhv wduf v wfuv hwfvuhwfvuwefv  wdfuvhwdfv uwhfv wfv fevuhwefvwf</p>
+                    <a className='projectGitBtn' href='google.com' target='__blank'><i class="fas fa-code"></i></a>
+                    <a className='projectDeployBtn' href='google.com' target='__blank'><i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
         </div>

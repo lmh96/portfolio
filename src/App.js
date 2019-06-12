@@ -15,6 +15,7 @@ class App extends React.Component {
       settingsVisible: false,
       hasVisibleOrbits: false,
       areSpinning: true,
+      myProjects: [],
     }
   }
 
@@ -83,6 +84,15 @@ class App extends React.Component {
     }
   }
 
+  componentDidMount() {
+    fetch('/api/projects').then(res => res.json()).then((result) => {
+      console.log(result);
+      this.setState({
+        myProjects: result,
+      })
+    })
+  }
+
   render() {
     return (
       <div className="App" >
@@ -90,7 +100,7 @@ class App extends React.Component {
         <Background className={this.state.current === 'main' ? 'bgCenter' : 'bgTop'} centerClick={this.toggleSettingsClick} 
           areSpinning={this.state.areSpinning} hasVisibleOrbits={this.state.hasVisibleOrbits}></Background>
         <About className={this.state.current === 'about' ? 'aboutActive' : 'aboutHidden'}></About>
-        <Projects className={this.state.current === 'projects' ? 'projectsActive' : 'projectsHidden'}></Projects>
+        <Projects className={this.state.current === 'projects' ? 'projectsActive' : 'projectsHidden'} myProjects={this.state.myProjects}></Projects>
         <SystemSettings className={this.state.settingsVisible ? 'settingsContainer' : 'settingsConatinerHidden'} toggleSettingsClick={this.toggleSettingsClick} 
           orbitsClick={this.toggleOrbits} orbits={this.state.hasVisibleOrbits}
           animateClick={this.toggleAnimation} animate={this.state.areSpinning}></SystemSettings>
