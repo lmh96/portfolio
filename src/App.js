@@ -11,6 +11,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      width: window.innerWidth,
+      height: window.innerHeight,
       current: 'main',
       settingsVisible: false,
       hasVisibleOrbits: false,
@@ -19,6 +21,21 @@ class App extends React.Component {
       allRingsVisible: false,
       showPluto: false,
     }
+  }
+
+  componentWillMount(){
+    window.addEventListener('resize', this.handleWindowSizeChange);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleWindowSizeChange);
+  }
+
+  handleWindowSizeChange = () => {
+    this.setState({
+      width: window.innerWidth,
+      height: window.innerHeight,
+    })
   }
 
   aboutClick = () => {
@@ -123,7 +140,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App" >
+      <div className="App" height={this.state.height} width={this.state.width}>
         <Header aboutClick={this.aboutClick} projectClick={this.projectClick}></Header>
         <Background className={this.state.current === 'main' ? 'bgCenter' : 'bgTop'} centerClick={this.toggleSettingsClick} 
           areSpinning={this.state.areSpinning} hasVisibleOrbits={this.state.hasVisibleOrbits} visibleRings={this.state.allRingsVisible}
