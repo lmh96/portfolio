@@ -139,8 +139,14 @@ class App extends React.Component {
   }
 
   render() {
+    let appStyle = {
+      maxWidth: this.state.width,
+      maxHeight: this.state.height,
+      overflow: 'hidden',
+    }
+
     return (
-      <div className="App" height={this.state.height} width={this.state.width}>
+      <div className="App" style={appStyle}>
         <Header aboutClick={this.aboutClick} projectClick={this.projectClick}></Header>
         <Background className={this.state.current === 'main' ? 'bgCenter' : 'bgTop'} centerClick={this.toggleSettingsClick} 
           areSpinning={this.state.areSpinning} hasVisibleOrbits={this.state.hasVisibleOrbits} visibleRings={this.state.allRingsVisible}

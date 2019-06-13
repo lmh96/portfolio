@@ -29,6 +29,7 @@
     top: calc(-50% + 110px);
     align-content: center;
     transition: all .3s ease-in-out;
+    overflow: hidden;
 }
 
 .bgCenter {
@@ -38,6 +39,7 @@
     top: 0;
     align-content: center;
     transition: all .3s ease-in-out;
+    overflow: hidden;
 }
 
 @media(prefers-color-scheme: light) {
