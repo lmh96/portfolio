@@ -11,7 +11,7 @@ function Projects(props) {
             <div id='project-content'>
                 {props.myProjects.map(project => (
                     <div className='project'>
-                        <img className='projectImg' src={project.image} alt='X'></img>
+                        {props.isMobile ? false : <img className='projectImg' src={project.image} alt='X'></img>}
                         <h2>{project.title}</h2>
                         <p>{project.description}</p>
                         <a className='projectGitBtn' href={project.git} target='__blank'><i className="fas fa-code"></i></a>
