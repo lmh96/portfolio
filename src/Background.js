@@ -22,7 +22,7 @@ function Background(props) {
 
     return (
         <div className={props.className}>
-            <button className="center" onClick={props.centerClick}><i class="fas fa-cog"></i></button>
+            <button className="center" onClick={props.centerClick}><i className="fas fa-cog"></i></button>
             <Orbit className={visible} oDiameter={200} pDiameter={10} dur={isActive ? '8.796s' : '0s'} start={rightStart} active={isActive} visible={areVisible} rDiameter={0} rDistance={0} rRotation={0} isBiPlanetary={false}></Orbit>
             <Orbit className={visible} oDiameter={275} pDiameter={30} dur={isActive ? '22.468s' : '0s'} start={leftStart} active={isActive} visible={areVisible} rDiameter={0} rDistance={0} rRotation={0} isBiPlanetary={false}></Orbit>
             <Orbit className={visible} oDiameter={365} pDiameter={30} dur={isActive ? '36.526s' : '0s'} start={rightStart} active={isActive} visible={areVisible} rDiameter={0} rDistance={0} rRotation={0} isBiPlanetary={false}></Orbit>

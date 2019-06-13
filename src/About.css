@@ -11,18 +11,16 @@
     border: none;
 }
 
-#title {
+#aboutTitle {
     color: inherit;
     margin-top: 100px;
-    margin-left: 20px;
+    margin-left: 15%;
 }
 
 .about {
     position: absolute;
     color: white;
     text-align: left;
-    padding-left: 15%;
-    padding-right: 15%;
     background: rgba(63, 63, 63, 0.8);
     border-top: 1px solid gray;
     transition: all .2s ease-in-out;

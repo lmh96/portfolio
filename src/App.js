@@ -20,11 +20,22 @@ class App extends React.Component {
       myProjects: [],
       allRingsVisible: false,
       showPluto: false,
+      isMobile: false,
     }
   }
 
-  componentWillMount(){
+  componentWillMount() {
     window.addEventListener('resize', this.handleWindowSizeChange);
+    if (this.state.width < 600) {
+      this.setState({
+        isMobile: true,
+      })
+    }
+    else {
+      this.setState({
+        isMobile: false,
+      })
+    }
   }
 
   componentWillUnmount() {
@@ -65,7 +76,7 @@ class App extends React.Component {
   }
 
   toggleSettingsClick = () => {
-    if(this.state.settingsVisible) {
+    if (this.state.settingsVisible) {
       this.setState({
         settingsVisible: false,
       })
@@ -78,7 +89,7 @@ class App extends React.Component {
   }
 
   toggleOrbits = () => {
-    if(this.state.hasVisibleOrbits) {
+    if (this.state.hasVisibleOrbits) {
       this.setState({
         hasVisibleOrbits: false,
       })
@@ -91,7 +102,7 @@ class App extends React.Component {
   }
 
   toggleAnimation = () => {
-    if(this.state.areSpinning) {
+    if (this.state.areSpinning) {
       this.setState({
         areSpinning: false,
       })
@@ -104,7 +115,7 @@ class App extends React.Component {
   }
 
   toggleAllRings = () => {
-    if(this.state.allRingsVisible) {
+    if (this.state.allRingsVisible) {
       this.setState({
         allRingsVisible: false,
       })
@@ -117,7 +128,7 @@ class App extends React.Component {
   }
 
   togglePluto = () => {
-    if(this.state.showPluto) {
+    if (this.state.showPluto) {
       this.setState({
         showPluto: false,
       })
@@ -130,34 +141,29 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    // fetch('/api/projects').then(res => res.json()).then((result) => {
-    //   console.log(result);
-    //   this.setState({
-    //     myProjects: result,
-    //   })
-    // })
+    fetch('/api/projects').then(res => res.json()).then((result) => {
+      this.setState({
+        myProjects: result,
+      })
+    })
   }
 
   render() {
-    let appStyle = {
-      maxWidth: this.state.width,
-      maxHeight: this.state.height,
-      overflow: 'hidden',
-    }
 
     return (
       <div className="App" >
         <Header aboutClick={this.aboutClick} projectClick={this.projectClick}></Header>
-        <Background className={this.state.current === 'main' ? 'bgCenter' : 'bgTop'} centerClick={this.toggleSettingsClick} 
+        <Background className={this.state.current === 'main' ? 'bgCenter' : 'bgTop'} centerClick={this.toggleSettingsClick}
           areSpinning={this.state.areSpinning} hasVisibleOrbits={this.state.hasVisibleOrbits} visibleRings={this.state.allRingsVisible}
           showPlutoLove={this.state.showPluto}></Background>
-        <About className={this.state.current === 'about' ? 'aboutActive' : 'aboutHidden'}></About>
-        <Projects className={this.state.current === 'projects' ? 'projectsActive' : 'projectsHidden'} myProjects={this.state.myProjects}></Projects>
-        <SystemSettings className={this.state.settingsVisible ? 'settingsContainer' : 'settingsConatinerHidden'} toggleSettingsClick={this.toggleSettingsClick} 
+        <About className={this.state.current === 'about' ? 'aboutActive' : 'aboutHidden'} isMobile={this.state.isMobile}></About>
+        <Projects className={this.state.current === 'projects' ? 'projectsActive' : 'projectsHidden'} myProjects={this.state.myProjects} isMobile={this.state.isMobile}></Projects>
+        <SystemSettings className={this.state.settingsVisible ? 'settingsContainer' : 'settingsConatinerHidden'} toggleSettingsClick={this.toggleSettingsClick}
           orbitsClick={this.toggleOrbits} orbits={this.state.hasVisibleOrbits}
           animateClick={this.toggleAnimation} animate={this.state.areSpinning}
           ringsClick={this.toggleAllRings} rings={this.state.allRingsVisible}
-          plutoClick={this.togglePluto} pluto={this.state.showPluto}></SystemSettings>
+          plutoClick={this.togglePluto} pluto={this.state.showPluto}>
+        </SystemSettings>
       </div>
     );
   }
