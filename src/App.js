@@ -130,12 +130,12 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/api/projects').then(res => res.json()).then((result) => {
-      console.log(result);
-      this.setState({
-        myProjects: result,
-      })
-    })
+    // fetch('/api/projects').then(res => res.json()).then((result) => {
+    //   console.log(result);
+    //   this.setState({
+    //     myProjects: result,
+    //   })
+    // })
   }
 
   render() {
@@ -146,7 +146,7 @@ class App extends React.Component {
     }
 
     return (
-      <div className="App" style={appStyle}>
+      <div className="App" >
         <Header aboutClick={this.aboutClick} projectClick={this.projectClick}></Header>
         <Background className={this.state.current === 'main' ? 'bgCenter' : 'bgTop'} centerClick={this.toggleSettingsClick} 
           areSpinning={this.state.areSpinning} hasVisibleOrbits={this.state.hasVisibleOrbits} visibleRings={this.state.allRingsVisible}
