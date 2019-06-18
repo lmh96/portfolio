@@ -180,8 +180,8 @@ class App extends React.Component {
           <MBackground centerClick={this.toggleSettingsClick}
             areSpinning={this.state.areSpinning} hasVisibleOrbits={this.state.hasVisibleOrbits} visibleRings={this.state.allRingsVisible}
             showPlutoLove={this.state.showPluto}></MBackground>
-          <MAbout className={this.state.current === 'about' ? 'mobile-aboutActive' : 'mobile-aboutHidden'} isMobile={this.state.isMobile}></MAbout>
-          <MProjects className={this.state.current === 'projects' ? 'mobile-projectsActive' : 'mobile-projectsHidden'} myProjects={this.state.myProjects} isMobile={this.state.isMobile}></MProjects>
+          <MAbout className={this.state.current === 'about' ? 'mobile-aboutActive' : 'mobile-aboutHidden'} closeClick={this.aboutClick} isMobile={this.state.isMobile}></MAbout>
+          <MProjects className={this.state.current === 'projects' ? 'mobile-projectsActive' : 'mobile-projectsHidden'} closeClick={this.projectClick} myProjects={this.state.myProjects} isMobile={this.state.isMobile}></MProjects>
           <MSystemSettings className={this.state.settingsVisible ? 'mobile-settingsContainer' : 'mobile-settingsConatinerHidden'} toggleSettingsClick={this.toggleSettingsClick}
             orbitsClick={this.toggleOrbits} orbits={this.state.hasVisibleOrbits}
             animateClick={this.toggleAnimation} animate={this.state.areSpinning}

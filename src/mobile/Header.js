@@ -24,6 +24,8 @@ function Header(props) {
                 </button>
                 </nav>
             </div>
+            <div id={props.menuHeight === 0 ? 'hide-nav-hidden' : 'hide-nav'} onClick={props.showHideClick}>
+            </div>
         </header>
     )
 }

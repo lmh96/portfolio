@@ -65,6 +65,23 @@
     display: inline-block;
 }
 
+.exit-div {
+    position: absolute;
+    top: 0;
+    left: 250px;
+    height: 100vh;
+    width: calc(100vw - 250px);
+    transition: all .5s ease-in-out;
+}
+
+.exit-div-hidden {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 0;
+}
+
 @media(prefers-color-scheme: light) {
     .mobile-settingsContainer {
         color: black;

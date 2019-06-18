@@ -33,6 +33,8 @@ function SystemSettings(props) {
                     <button className='mobile-toggleButton'>{props.rings ? <i className="far fa-check-circle"></i> : <i className="far fa-circle"></i>}</button>
                 </div>
             </div>
+            <div className={props.className === 'mobile-settingsContainer' ? 'exit-div' : 'exit-div-hidden'} onClick={props.toggleSettingsClick}>
+            </div>
         </div>
     )
 }

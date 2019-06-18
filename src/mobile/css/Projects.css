@@ -17,6 +17,14 @@
     margin-left: 15%;
 }
 
+#projects-hide-btn {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    color: white;
+    font-size: 38px;
+}
+
 .mobile-projects {
     position: absolute;
     color: white;

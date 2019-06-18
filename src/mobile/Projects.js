@@ -8,6 +8,7 @@ function Projects(props) {
             <h1 id={'mobile-projectTitle'}>
                 Projects
             </h1>
+            <button id="projects-hide-btn" onClick={props.closeClick}><i className="fas fa-times"></i></button>
             <div id='mobile-project-content'>
                 {props.myProjects.map(project => (
                     <div className='mobile-project'>
