@@ -21,7 +21,10 @@
     position: absolute;
     top: 25px;
     right: 25px;
-    color: white;
+    color: inherit;
+    background: none;
+    border: none;
+    outline: none;
     font-size: 38px;
 }
 
