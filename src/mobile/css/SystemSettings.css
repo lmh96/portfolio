@@ -77,9 +77,9 @@
 .exit-div-hidden {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 250;
     height: 0;
-    width: 0;
+    width: calc(100vw - 250px);
 }
 
 @media(prefers-color-scheme: light) {

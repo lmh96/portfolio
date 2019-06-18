@@ -34,14 +34,15 @@
     position: absolute;
     top: 0;
     width: 100vw;
-    padding-bottom: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
     border-bottom: gray 1px solid;
 }
 
 #mobile-git {
     color: inherit;
     text-decoration: none;
-    font-size: 36px;
+    font-size: 38px;
     margin-left: 20px;
     margin-right: 10px;
 }
@@ -49,7 +50,7 @@
 #mobile-linkedin {
     color: inherit;
     text-decoration: none;
-    font-size: 36px;
+    font-size: 38px;
     margin: 0;
 }
 
@@ -66,6 +67,7 @@
     width: 100vw;
     margin-bottom: 10px;
     padding-left: 20px;
+    padding-bottom: 5px;
     background: none;
     outline: none;
     border: none;
@@ -75,10 +77,10 @@
 #hide-nav {
     position: absolute;
     background: none;
-    top: 235px;
+    top: 239px;
     left: 0;
     width: 100vw;
-    height: calc(100vh - 235px);
+    height: calc(100vh - 239px);
     transition: all .5s ease-in-out;
 }
 
