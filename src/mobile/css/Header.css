@@ -77,10 +77,10 @@
 #hide-nav {
     position: absolute;
     background: none;
-    top: 239px;
+    top: 240px;
     left: 0;
     width: 100vw;
-    height: calc(100vh - 239px);
+    height: calc(100vh - 240px);
     transition: all .5s ease-in-out;
 }
 

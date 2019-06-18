@@ -154,7 +154,7 @@ class App extends React.Component {
   showHideClick = () => {
     if(this.state.mobileMenuHeight === 0) {
       this.setState({
-        mobileMenuHeight: 148,
+        mobileMenuHeight: 150,
       })
     }
     else {
