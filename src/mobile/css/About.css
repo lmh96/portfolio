@@ -1,0 +1,46 @@
+#mobile-aboutActive {
+    top: 90px;
+    width: 100vw;
+    height: calc(100vh - 90px);
+}
+
+#mobile-aboutHidden {
+    top: 100vh;
+    height: 0;
+    width: 100vw;
+    border: none;
+}
+
+#mobile-aboutTitle {
+    color: inherit;
+    margin-top: 30px;
+    margin-left: 15%;
+}
+
+.mobile-about {
+    position: absolute;
+    color: white;
+    text-align: left;
+    background: rgba(63, 63, 63, 0.8);
+    border-top: 1px solid gray;
+    transition: all .2s ease-in-out;
+    overflow: hidden;
+    left: 0;
+    width: 100vw;
+    filter: blur(1);
+    z-index: 10;
+}
+
+@media(prefers-color-scheme: light) {
+    .mobile-about {
+        color: black;
+        background: rgba(192, 192, 192, 0.8);
+    }
+}
+
+@media(prefers-color-scheme: dark) {
+    .mobile-about {
+        color: white;
+        background: rgba(63, 63, 63, 0.8)
+    }
+}

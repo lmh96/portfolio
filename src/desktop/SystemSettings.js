@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./SystemSettings.css";
+import "./css/SystemSettings.css";
 
 function SystemSettings(props) {
     return (

@@ -1,7 +1,7 @@
 import React from "react";
 import Orbit from './Orbit';
 
-import "./Background.css";
+import "./css/Background.css";
 
 function Background(props) {
     let visible = 'orbit';

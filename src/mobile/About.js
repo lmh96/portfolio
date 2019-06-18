@@ -1,14 +1,14 @@
 import React from "react";
 
-import "./About.css";
+import "./css/About.css";
 
 function About(props) {
     return (
-        <div className={'about'} id={props.className}>
-            <h1 id={'aboutTitle'}>
+        <div className={'mobile-about'} id={props.className}>
+            <h1 id={'mobile-aboutTitle'}>
                 About
             </h1>
-            <div id='about-content'>
+            <div id='mobile-about-content'>
             
             </div>
         </div>

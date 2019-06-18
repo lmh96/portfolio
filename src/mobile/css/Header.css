@@ -1,0 +1,82 @@
+#mobile-header {
+    border-bottom: 1px solid gray;
+    background: inherit;
+    z-index: 100;
+}
+
+#mobile-title {
+    color: inherit;
+    font-size: 38px;
+    padding-left: 20px;
+}
+
+#mobile-nav-expand {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    font-size: 38px;
+    color: inherit;
+}
+
+#mobile-header-buttons {
+    position: absolute;
+    top: 91px;
+    overflow: hidden;
+    width: 100vw;
+    transition: all .5s ease-in-out;
+    background: inherit;
+}
+
+#mobile-linkedin-and-git {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    padding-bottom: 5px;
+    border-bottom: gray 1px solid;
+}
+
+#mobile-git {
+    color: inherit;
+    text-decoration: none;
+    font-size: 36px;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+#mobile-linkedin {
+    color: inherit;
+    text-decoration: none;
+    font-size: 36px;
+    margin: 0;
+}
+
+#mobile-nav {
+    position: absolute;
+    top: 60px;
+}
+
+.mobile-navBtn {
+    text-align: left;
+    color: inherit;
+    font-size: 28px;
+    display: block;
+    width: 100vw;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    background: none;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid gray;
+}
+
+@media(prefers-color-scheme: light) {
+    #mobile-header {
+        color: black;
+    }
+}
+
+@media(prefers-color-scheme: dark) {
+    #mobile-header {
+        color: white;
+    }
+}

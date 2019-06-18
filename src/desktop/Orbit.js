@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Orbit.css';
+import './css/Orbit.css';
 
 function Orbit(props) {
     let orbit = {

@@ -1,0 +1,92 @@
+.mobile-settingsContainer {
+    position: absolute;
+    height: 100vh;
+    width: 250px;
+    padding-top: 110px;
+    text-align: left;
+    transition: all .5s ease-in-out;
+    top: 0;
+    left: 0;
+    background: rgba(63,63,63,0.8);
+    border: gray 1px solid;
+    border-radius: 10px;
+    z-index: 90;
+}
+
+.mobile-settingsConatinerHidden {
+    position: absolute;
+    height: 100vh;
+    width: 0;
+    transition: all .5s ease-in-out;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 99;
+}
+
+.mobile-toggleButton {
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 32px;
+    color: white;
+}
+
+.mobile-exitButton {
+    position: absolute;
+    top: -5px;
+    right: 0px;
+    font-size: 38px;
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    text-decoration: none;
+}
+
+.row {
+    position: relative;
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid gray;
+}
+
+.prompt {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    display: inline-block;
+}
+
+.check {
+    position: absolute;
+    right: 0px;
+    display: inline-block;
+}
+
+@media(prefers-color-scheme: light) {
+    .mobile-settingsContainer {
+        color: black;
+        background: rgba(192, 192, 192, 0.8);
+    }
+    .mobile-toggleButton {
+        color: black;
+    }
+    .mobile-exitButton {
+        color: black;
+    }
+}
+
+@media(prefers-color-scheme: dark) {
+    .mobile-settingsContainer {
+        color: white;
+        background: rgba(63, 63, 63, 0.8)
+    }
+    .mobile-toggleButton {
+        color: white;
+    }
+    .mobile-exitButton {
+        color: white;
+    }
+}
