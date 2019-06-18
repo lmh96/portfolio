@@ -37,11 +37,12 @@ header {
 
 nav {
     position: absolute;
-    top: 150px;
+    top: 25px;
+    right: 150px;
 }
 
 .navBtn {
-    display: block;
+    display: inline-block;
     background: none;
     color: inherit;
     border: none;
@@ -54,8 +55,7 @@ nav {
 }
 
 .navBtn:hover {
-    height: 50px;
-    margin-left: 20px;
+    color: gray;
 }
 
 @media(prefers-color-scheme: light) {

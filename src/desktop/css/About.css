@@ -33,7 +33,7 @@
 @media(prefers-color-scheme: light) {
     .about {
         color: black;
-        background: rgba(192, 192, 192, 0.8);
+        background: rgba(192, 192, 192, 0.9);
     }
 }
 

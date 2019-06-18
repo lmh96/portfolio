@@ -1,23 +1,22 @@
 .settingsContainer {
     position: absolute;
-    height: 300px;
-    width: 200px;
+    height: 100vh;
+    width: 250px;
     transition: all .5s ease-in-out;
-    top: calc(50% - 150px);
-    left: calc(50% - 100px);
+    top: 0;
+    left: 0;
     background: rgba(63,63,63,0.8);
-    border: gray 1px solid;
-    border-radius: 10px;
+    border-right: gray 1px solid;
     z-index: 99;
 }
 
 .settingsConatinerHidden {
     position: absolute;
-    height: 0;
+    height: 100vh;
     width: 0;
     transition: all .5s ease-in-out;
-    top: 50%;
-    left: 50%;
+    top: 0;
+    left: 0;
     overflow: hidden;
     z-index: 99;
 }
@@ -32,11 +31,12 @@
 
 .exitButton {
     position: absolute;
-    top: 10px;
-    right: 5px;
+    top: 0px;
+    right: 0px;
     background: none;
     border: none;
-    outline: none;font-size: 20px;
+    outline: none;
+    font-size: 32px;
     color: white;
     text-decoration: underline;
 }
@@ -44,7 +44,7 @@
 @media(prefers-color-scheme: light) {
     .settingsContainer {
         color: black;
-        background: rgba(192, 192, 192, 0.8);
+        background: rgba(192, 192, 192, 0.9);
     }
     .toggleButton {
         color: black;
