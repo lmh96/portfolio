@@ -13,8 +13,9 @@
 
 #mobile-aboutTitle {
     color: inherit;
-    margin-top: 30px;
+    margin-top: 15px;
     margin-left: 15%;
+    margin-bottom: 10px;
 }
 
 #about-hide-btn {
@@ -32,6 +33,8 @@
     padding-left: 15%;
     padding-right: 15%;
     padding-bottom: 15%;
+    max-height: calc(100vh - 215px);
+    overflow: auto;
 }
 
 .mobile-about {
@@ -41,7 +44,7 @@
     background: rgba(63, 63, 63, 0.92);
     border-top: 1px solid gray;
     transition: all .2s ease-in-out;
-    overflow: auto;
+    overflow: hidden;
     left: 0;
     width: 100vw;
     filter: blur(1);
