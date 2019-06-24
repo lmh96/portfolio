@@ -28,6 +28,22 @@ class App extends React.Component {
       showPluto: false,
       isMobile: false,
       mobileMenuHeight: 0, 
+      aboutMe: 
+        <div>
+          Currently a student at Georgia Tech full-stack development boot camp, previously a student at Kennesaw State for
+          Software Engineering.<br></br><br></br><br></br>
+      
+          I started teaching myself to code in middle school(2008) with java, and have enjoyed it ever since! I've made just
+          about every type of project I could think to make, from video games to websites and mobile apps, and I've
+          messed around with more languages than I care to list. However I'm proficient in C#, Java, and JavaScript,
+          as well as ASP.NET and HTML.<br></br><br></br><br></br>
+
+          As of right now, my best languages are C#, ASP.NET, HTML, and JavaScript, but I'm looking in to more on a regular basis.
+          my current side project is the angular web framework.<br></br><br></br><br></br>
+
+          Currently looking for a job in full-stack development in Atlanta, or the Atlanta area.
+        </div>
+      ,
     }
   }
 
@@ -180,7 +196,7 @@ class App extends React.Component {
           <MBackground centerClick={this.toggleSettingsClick}
             areSpinning={this.state.areSpinning} hasVisibleOrbits={this.state.hasVisibleOrbits} visibleRings={this.state.allRingsVisible}
             showPlutoLove={this.state.showPluto}></MBackground>
-          <MAbout className={this.state.current === 'about' ? 'mobile-aboutActive' : 'mobile-aboutHidden'} closeClick={this.aboutClick} isMobile={this.state.isMobile}></MAbout>
+          <MAbout className={this.state.current === 'about' ? 'mobile-aboutActive' : 'mobile-aboutHidden'} content={this.state.aboutMe} closeClick={this.aboutClick} isMobile={this.state.isMobile}></MAbout>
           <MProjects className={this.state.current === 'projects' ? 'mobile-projectsActive' : 'mobile-projectsHidden'} closeClick={this.projectClick} myProjects={this.state.myProjects} isMobile={this.state.isMobile}></MProjects>
           <MSystemSettings className={this.state.settingsVisible ? 'mobile-settingsContainer' : 'mobile-settingsConatinerHidden'} toggleSettingsClick={this.toggleSettingsClick}
             orbitsClick={this.toggleOrbits} orbits={this.state.hasVisibleOrbits}
@@ -197,7 +213,7 @@ class App extends React.Component {
           <Background className={this.state.current === 'main' ? 'bgCenter' : 'bgTop'} centerClick={this.toggleSettingsClick}
             areSpinning={this.state.areSpinning} hasVisibleOrbits={this.state.hasVisibleOrbits} visibleRings={this.state.allRingsVisible}
             showPlutoLove={this.state.showPluto}></Background>
-          <About className={this.state.current === 'about' ? 'aboutActive' : 'aboutHidden'} isMobile={this.state.isMobile}></About>
+          <About className={this.state.current === 'about' ? 'aboutActive' : 'aboutHidden'} content={this.state.aboutMe} isMobile={this.state.isMobile}></About>
           <Projects className={this.state.current === 'projects' ? 'projectsActive' : 'projectsHidden'} myProjects={this.state.myProjects} isMobile={this.state.isMobile}></Projects>
           <SystemSettings className={this.state.settingsVisible ? 'settingsContainer' : 'settingsConatinerHidden'} toggleSettingsClick={this.toggleSettingsClick}
             orbitsClick={this.toggleOrbits} orbits={this.state.hasVisibleOrbits}

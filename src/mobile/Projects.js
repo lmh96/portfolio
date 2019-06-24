@@ -20,7 +20,13 @@ function Projects(props) {
                 ))}
                 <div className='mobile-project'>
                     <h2>Test Project</h2>
-                    <p>sdfasdf asdf adf asdf asf kqwef eiuvh wfuhv wifuvh wdfhv dwfvhwfuv wduhv wduf v wfuv hwfvuhwfvuwefv  wdfuvhwdfv uwhfv wfv fevuhwefvwf</p>
+                    <p>sdfasdf asdf adf asdf asf kqwef asdgf asdf asdf asdf asdfqwet rhg dfghj rtyu erg sgfsdghfy jrteyuertyageiuvh wfuhv wifuvh wdfhv dwfvhwfuv wduhv wduf v wfuv hwfvuhwfvuwefv  wdfuvhwdfv uwhfv wfv fevuhwefvwf</p>
+                    <a className='mobile-projectGitBtn' href='google.com' target='__blank'><i className="fas fa-code"></i></a>
+                    <a className='mobile-projectDeployBtn' href='google.com' target='__blank'><i className="fas fa-external-link-alt"></i></a>
+                </div>
+                <div className='mobile-project'>
+                    <h2>Test Project</h2>
+                    <p>sdfasdf asdf adf asdf asf kqwef asdgf asdf asdf asdf asdfqwet rhg dfghj rtyu erg sgfsdghfy jrteyuertyageiuvh wfuhv wifuvh wdfhv dwfvhwfuv wduhv wduf v wfuv hwfvuhwfvuwefv  wdfuvhwdfv uwhfv wfv fevuhwefvwf</p>
                     <a className='mobile-projectGitBtn' href='google.com' target='__blank'><i className="fas fa-code"></i></a>
                     <a className='mobile-projectDeployBtn' href='google.com' target='__blank'><i className="fas fa-external-link-alt"></i></a>
                 </div>

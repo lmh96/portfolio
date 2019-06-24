@@ -63,6 +63,7 @@
 #project-content {
     position: absolute;
     top: 160px;
+    width: 100%;
     max-height: calc(100vh - 160px);
     overflow: auto;
 }

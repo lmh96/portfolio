@@ -28,14 +28,20 @@
     font-size: 38px;
 }
 
+#mobile-about-content {
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 15%;
+}
+
 .mobile-about {
     position: absolute;
     color: white;
     text-align: left;
-    background: rgba(63, 63, 63, 0.8);
+    background: rgba(63, 63, 63, 0.92);
     border-top: 1px solid gray;
     transition: all .2s ease-in-out;
-    overflow: hidden;
+    overflow: auto;
     left: 0;
     width: 100vw;
     filter: blur(1);
@@ -45,13 +51,13 @@
 @media(prefers-color-scheme: light) {
     .mobile-about {
         color: black;
-        background: rgba(192, 192, 192, 0.9);
+        background: rgba(192, 192, 192, 0.92);
     }
 }
 
 @media(prefers-color-scheme: dark) {
     .mobile-about {
         color: white;
-        background: rgba(63, 63, 63, 0.8)
+        background: rgba(63, 63, 63, 0.92)
     }
 }

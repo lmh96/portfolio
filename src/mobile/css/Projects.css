@@ -46,13 +46,15 @@
     margin-left: 15%;
     position: relative;
     max-width: 70%;
-    height: 201px;
+    padding-bottom: 30px;
+    min-height: 151px;
     border-bottom: 1px solid gray;
 }
 
 .mobile-projectGitBtn {
     position: absolute;
     color: inherit;
+    font-size: 28px;
     bottom: 5px;
     right: 0;
 }
@@ -60,14 +62,15 @@
 .mobile-projectDeployBtn {
     position: absolute;
     color: inherit;
+    font-size: 28px;
     bottom: 5px;
-    right: 35px;
+    right: 45px;
 }
 
 #mobile-project-content {
     position: absolute;
     top: 80px;
-    max-height: calc(100vh - 80px);
+    max-height: calc(100vh - 180px);
     overflow: auto;
 }
 

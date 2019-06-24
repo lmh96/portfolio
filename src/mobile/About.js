@@ -10,7 +10,7 @@ function About(props) {
             </h1>
             <button id="about-hide-btn" onClick={props.closeClick}><i className="fas fa-times"></i></button>
             <div id='mobile-about-content'>
-            
+                {props.content}
             </div>
         </div>
     );

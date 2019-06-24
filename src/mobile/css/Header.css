@@ -28,6 +28,7 @@
     width: 100vw;
     transition: all .5s ease-in-out;
     background: inherit;
+    color: inherit;
 }
 
 #mobile-linkedin-and-git {
@@ -56,7 +57,9 @@
 
 #mobile-nav {
     position: absolute;
+    width: 100vw;
     top: 60px;
+    right: 0;
 }
 
 .mobile-navBtn {

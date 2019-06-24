@@ -9,7 +9,7 @@ function About(props) {
                 About
             </h1>
             <div id='about-content'>
-            
+                {props.content}
             </div>
         </div>
     );
