@@ -18,13 +18,13 @@ function Projects(props) {
                         <a className='projectDeployBtn' href={project.deploy} target='__blank'><i className="fas fa-external-link-alt"></i></a>
                     </div>
                 ))}
-                <div className='project'>
+                {/* <div className='project'>
                     {props.isMobile ? false : <img className='projectImg' src="test" alt="test"></img>}
                     <h2>Test Project</h2>
                     <p>sdfasdf asdf adf asdf asf kqwef eiuvh wfuhv wifuvh wdfhv dwfvhwfuv wduhv wduf v wfuv hwfvuhwfvuwefv  wdfuvhwdfv uwhfv wfv fevuhwefvwf</p>
                     <a className='projectGitBtn' href='google.com' target='__blank'><i className="fas fa-code"></i></a>
                     <a className='projectDeployBtn' href='google.com' target='__blank'><i className="fas fa-external-link-alt"></i></a>
-                </div>
+                </div> */}
             </div>
         </div>
     );
