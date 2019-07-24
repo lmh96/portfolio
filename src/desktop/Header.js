@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"
 
 import "./css/Header.css";
 
@@ -11,11 +12,23 @@ function Header(props) {
                 <a className="linkedin" href="https://www.linkedin.com/in/logan-hill-86828b166/" target="__blank"><i className="fab fa-linkedin"></i></a>
             </div>
             <nav>
+
+
                 <button className='navBtn' onClick={props.aboutClick}>
-                    About
+                    <Link
+                        to={window.location.pathname === "/about" ? "/" : "/about"} 
+                        className="navBtn"
+                    >
+                        About
+                </Link>
                 </button>
                 <button className='navBtn' onClick={props.projectClick}>
-                    Projects
+                    <Link
+                        to={window.location.pathname === "/projects" ? "/" : "/projects"}
+                        className="navBtn"
+                    >
+                        Projects
+                </Link>
                 </button>
             </nav>
         </header>

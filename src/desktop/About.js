@@ -2,17 +2,24 @@ import React from "react";
 
 import "./css/About.css";
 
-function About(props) {
-    return (
-        <div className={'about'} id={props.className}>
-            <h1 id={'aboutTitle'}>
-                About
+class About extends React.Component {
+    state = {
+        didMount: false,
+    }
+
+    render() {
+        return (
+            <div className={'about'} id={"aboutActive"}>
+                <h1 id={'aboutTitle'}>
+                    About
             </h1>
-            <div id='about-content'>
-                {props.content}
+                <div id='about-content'>
+                    {this.props.content}
+                </div>
             </div>
-        </div>
-    );
+        );
+    }
+
 }
 
 export default About;
