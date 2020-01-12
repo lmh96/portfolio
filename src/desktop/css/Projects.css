@@ -10,7 +10,7 @@
     background: rgba(37, 37, 37, 0.9);
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
-    z-index: 99;
+    z-index: 90;
 }
 
 .projectsTitle {
