@@ -1,18 +1,12 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom"
+
+import System from './desktop/System';
+import Header from './desktop/Header';
+import About from './desktop/About';
+import Projects from './desktop/Projects';
+
 import './App.css';
-
-import Header from './desktop/Header.js';
-import Background from './desktop/Background.js';
-import About from './desktop/About.js';
-import Projects from './desktop/Projects.js';
-import SystemSettings from './desktop/SystemSettings.js';
-
-import MHeader from './mobile/Header.js';
-import MBackground from './mobile/Background.js';
-import MAbout from './mobile/About.js';
-import MProjects from './mobile/Projects.js';
-import MSystemSettings from './mobile/SystemSettings.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -20,15 +14,13 @@ class App extends React.Component {
     this.state = {
       width: window.innerWidth,
       height: window.innerHeight,
-      current: 'main',
-      settingsVisible: false,
-      hasVisibleOrbits: false,
-      areSpinning: true,
-      myProjects: [],
-      allRingsVisible: false,
-      showPluto: false,
       isMobile: false,
-      mobileMenuHeight: 0,
+      showMenu: false,
+      myProjects: [],
+      active: "main",
+      view: "side",
+      showrings: false,
+      showPluto: false,
       aboutMe:
         <div>
           Currently a student at Georgia Tech full-stack development boot camp, previously a student at Kennesaw State for
@@ -39,7 +31,7 @@ class App extends React.Component {
           messed around with more languages than I care to list. However I'm proficient in C#, Java, and JavaScript,
           as well as ASP.NET and HTML.<br></br><br></br><br></br>
 
-          As of right now, my best languages are C#, ASP.NET, HTML, and JavaScript, but I'm looking in to more on a regular basis. 
+          As of right now, my best languages are C#, ASP.NET, HTML, and JavaScript, but I'm looking in to more on a regular basis.
           My current side project is the angular web framework.<br></br><br></br><br></br>
 
           Currently looking for a job in full-stack development in Atlanta, or the Atlanta area.
@@ -47,23 +39,31 @@ class App extends React.Component {
       ,
     }
   }
-
   componentWillMount() {
     window.addEventListener('resize', this.handleWindowSizeChange);
-    if (this.state.width < 600) {
+    if (window.innerWidth < 600) {
       this.setState({
         isMobile: true,
-      })
+      });
+      console.log(true);
     }
     else {
       this.setState({
         isMobile: false,
+      });
+      console.log(false);
+    }
+
+    if (window.location.pathname === "/") {
+      this.setState({
+        active: "main"
       })
     }
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.handleWindowSizeChange);
+    else {
+      this.setState({
+        active: "notMain"
+      })
+    }
   }
 
   handleWindowSizeChange = () => {
@@ -73,112 +73,41 @@ class App extends React.Component {
     })
   }
 
-  aboutClick = () => {
-    if (this.state.current !== 'about') {
-      this.setState({
-        current: 'about',
-        mobileMenuHeight: 0,
-      });
-    }
-    else {
-      this.setState({
-        current: 'main',
-        mobileMenuHeight: 0,
-      });
-    }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleWindowSizeChange);
   }
 
-  projectClick = () => {
-    if (this.state.current !== 'projects') {
+  changeView = () => {
+    if (this.state.view === "side") {
       this.setState({
-        current: 'projects',
-        mobileMenuHeight: 0,
-      });
-    }
-    else {
-      this.setState({
-        current: 'main',
-        mobileMenuHeight: 0,
-      });
-    }
-  }
-
-  toggleSettingsClick = () => {
-    if (this.state.settingsVisible) {
-      this.setState({
-        settingsVisible: false,
+        view: "top",
       })
     }
     else {
       this.setState({
-        settingsVisible: true,
+        view: "side",
       })
     }
   }
 
-  toggleOrbits = () => {
-    if (this.state.hasVisibleOrbits) {
-      this.setState({
-        hasVisibleOrbits: false,
-      })
-    }
-    else {
-      this.setState({
-        hasVisibleOrbits: true,
-      })
-    }
+  changePage = () => {
+    this.setState({
+      active: "notMain",
+      showMenu: false
+    })
   }
 
-  toggleAnimation = () => {
-    if (this.state.areSpinning) {
-      this.setState({
-        areSpinning: false,
-      })
-    }
-    else {
-      this.setState({
-        areSpinning: true,
-      })
-    }
+  menuClick = () => {
+    this.setState({
+      showMenu: !this.state.showMenu,
+    })
   }
 
-  toggleAllRings = () => {
-    if (this.state.allRingsVisible) {
-      this.setState({
-        allRingsVisible: false,
-      })
-    }
-    else {
-      this.setState({
-        allRingsVisible: true
-      })
-    }
-  }
-
-  togglePluto = () => {
-    if (this.state.showPluto) {
-      this.setState({
-        showPluto: false,
-      })
-    }
-    else {
-      this.setState({
-        showPluto: true,
-      })
-    }
-  }
-
-  showHideClick = () => {
-    if (this.state.mobileMenuHeight === 0) {
-      this.setState({
-        mobileMenuHeight: 150,
-      })
-    }
-    else {
-      this.setState({
-        mobileMenuHeight: 0,
-      })
-    }
+  gotoMain = () => {
+    this.setState({
+      active: "main",
+      showMenu: false,
+    })
   }
 
   componentDidMount() {
@@ -189,54 +118,22 @@ class App extends React.Component {
     })
   }
 
-
-
   render() {
-    if (this.state.isMobile) {
-      return (
-        <div className="App" >
-          <MHeader aboutClick={this.aboutClick} projectClick={this.projectClick} showHideClick={this.showHideClick} menuHeight={this.state.mobileMenuHeight}></MHeader>
-          <MBackground centerClick={this.toggleSettingsClick}
-            areSpinning={this.state.areSpinning} hasVisibleOrbits={this.state.hasVisibleOrbits} visibleRings={this.state.allRingsVisible}
-            showPlutoLove={this.state.showPluto}></MBackground>
-          <MAbout className={this.state.current === 'about' ? 'mobile-aboutActive' : 'mobile-aboutHidden'} content={this.state.aboutMe} closeClick={this.aboutClick} isMobile={this.state.isMobile}></MAbout>
-          <MProjects className={this.state.current === 'projects' ? 'mobile-projectsActive' : 'mobile-projectsHidden'} closeClick={this.projectClick} myProjects={this.state.myProjects} isMobile={this.state.isMobile}></MProjects>
-          <MSystemSettings className={this.state.settingsVisible ? 'mobile-settingsContainer' : 'mobile-settingsConatinerHidden'} toggleSettingsClick={this.toggleSettingsClick}
-            orbitsClick={this.toggleOrbits} orbits={this.state.hasVisibleOrbits}
-            animateClick={this.toggleAnimation} animate={this.state.areSpinning}
-            ringsClick={this.toggleAllRings} rings={this.state.allRingsVisible}>
-          </MSystemSettings>
+    console.log(this.state.isMobile + " desktop");
+    return (
+      <Router>
+        <div className="App" style={{ maxHeight: this.state.height, maxWidth: this.state.width, overflowX: "hidden", overflowY: "hidden", position: "relative", backgroundColor: "#1b1b1b" }}>
+        <Header aboutClick={this.changePage} projectsClick={this.changePage} titleClick={this.gotoMain} menuClick={this.menuClick} showMenu={this.state.showMenu} isMobile={this.state.isMobile}></Header>
+          <System centerClick={this.changeView} view={this.state.view} showRings={this.state.rings} showPluto={this.state.showPluto} active={this.state.active}></System>
+          <Route exact path="/about" render={() => (
+            <About content={this.state.aboutMe}></About>
+          )} />
+          <Route exact path="/projects" render={() => (
+            <Projects myProjects={this.state.myProjects} isMobile={this.state.isMobile}></Projects>
+          )} />
         </div>
-      );
-    }
-    else {
-      return (
-        <Router>
-          <div>
-            <Header aboutClick={this.aboutClick} projectClick={this.projectClick}></Header>
-            <Background className={window.location.pathname === "/" ? 'bgCenter' : 'bgTop'} centerClick={this.toggleSettingsClick}
-              areSpinning={this.state.areSpinning} hasVisibleOrbits={this.state.hasVisibleOrbits} visibleRings={this.state.allRingsVisible}
-              showPlutoLove={this.state.showPluto}>
-            </Background>
-            <Route exact path="/about" render={() => (
-                <About content={this.state.aboutMe} isMobile={this.state.isMobile} />
-            )}></Route>
-            <Route exact path="/projects" render={() => (
-              <Projects myProjects={this.state.myProjects} isMobile={this.state.isMobile} />
-            )}></Route>
-
-            {/* <About className={this.state.current === 'about' ? 'aboutActive' : 'aboutHidden'} content={this.state.aboutMe} isMobile={this.state.isMobile}></About>
-          <Projects className={this.state.current === 'projects' ? 'projectsActive' : 'projectsHidden'} myProjects={this.state.myProjects} isMobile={this.state.isMobile}></Projects> */}
-            <SystemSettings className={this.state.settingsVisible ? 'settingsContainer' : 'settingsConatinerHidden'} toggleSettingsClick={this.toggleSettingsClick}
-              orbitsClick={this.toggleOrbits} orbits={this.state.hasVisibleOrbits}
-              animateClick={this.toggleAnimation} animate={this.state.areSpinning}
-              ringsClick={this.toggleAllRings} rings={this.state.allRingsVisible}
-              plutoClick={this.togglePluto} pluto={this.state.showPluto}>
-            </SystemSettings>
-          </div>
-        </Router>
-      );
-    }
+      </Router>
+    );
   }
 }
 

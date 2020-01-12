@@ -1,50 +1,60 @@
-#aboutActive {
-    top: 110px;
-    width: 100vw;
-    height: calc(100vh - 110px);
-}
-
-#aboutHidden {
-    top: 100vh;
-    height: 0;
-    width: 100vw;
-    border: none;
-}
-
-#aboutTitle {
-    color: inherit;
-    margin-top: 100px;
-    margin-left: 15%;
-}
-
-#about-content {
-    padding-left: 15%;
-    padding-right: 15%;
-}
-
 .about {
-    position: absolute;
-    color: white;
-    text-align: left;
-    background: rgba(63, 63, 63, 0.8);
-    border-top: 1px solid gray;
-    transition: all .2s ease-in-out;
-    overflow: hidden;
-    left: 0;
-    width: 100vw;
-    filter: blur(1);
+    position: relative;
+    width: 56vw;
+    height: calc(100vh - 110px);
+    min-width: 600px;
+    margin-top: 110px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1px;
+    background: rgba(37, 37, 37, 0.9);
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    z-index: 90;
 }
 
-@media(prefers-color-scheme: light) {
+.aboutTitle {
+    margin-left: 15%;
+    color: white;
+    font-size: 2em;
+}
+
+.aboutContent {
+    margin-left: 15%;
+    margin-right: 15%;
+    max-height: calc(100% - 130px);
+    overflow: auto;
+    color: white;
+}
+
+@media (min-height: 320px) and (max-height: 768px) {
     .about {
-        color: black;
-        background: rgba(192, 192, 192, 0.9);
+        margin-top: 80px;
+        height: calc(100vh - 80px);
+    }
+
+    .aboutContent {
+        max-height: calc(100% - 100px);
     }
 }
 
-@media(prefers-color-scheme: dark) {
+@media (min-width: 320px) and (max-width: 768px) {
     .about {
-        color: white;
-        background: rgba(63, 63, 63, 0.8)
+        min-width: 0;
+        width: 100vw;
+
+    }
+
+    .aboutContent {
+        margin-left: none;
+        margin-right: none;
+    }
+}
+
+@media (min-width: 571px) and (max-width: 1366px) and (min-height: 768px) {
+    .about {
+        width: 80vw;
+        height: calc(100vh - 220px);
+        border-radius: 5px;
     }
 }

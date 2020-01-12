@@ -1,0 +1,942 @@
+#blur {
+    transition: all .2s ease-in-out;
+    filter: blur(5px);
+}
+
+.system {
+    z-index: 0;
+    transition: all .5s ease-in-out;
+}
+
+.center {
+    position: absolute;
+    height: 124px;
+    width: 124px;
+    top: calc(50vh - 62px);
+    left: calc(50vw - 62px);
+    border-radius: 100%;
+    border: none;
+    background-color: white;
+    outline: none;
+    z-index: 50;
+}
+
+.center:hover {
+    height: 128px;
+    width: 128px;
+    top: calc(50vh - 64px);
+    left: calc(50vw - 64px);
+}
+
+.center:active {
+    background: rgb(206, 206, 206);
+}
+
+
+
+
+.mercuryX {
+    pointer-events: none;
+    height: 14px;
+    width: 14px;
+    border-radius: 100%;
+    background-color: grey;
+
+    animation: mercX 8.796s ease-in-out infinite;
+}
+.mercuryY {
+    pointer-events: none;
+    position: absolute;
+    top: calc(50vh - 7px);
+    left: calc(50vw - 7px);
+    z-index: 50;
+
+    animation: mercY 8.796s cubic-bezier(.5, .3, .5, .7) infinite;
+}
+
+.mercuryCenter {
+    pointer-events: none;
+    position: absolute;
+    top: calc(50vh - 7px);
+    left: calc(50vw - 7px);
+    z-index: 51;
+}
+.mercury {
+    pointer-events: none;
+    height: 14px;
+    width: 14px;
+    border-radius: 100%;
+    background-color: grey;
+
+    animation: mercOrbit 8.796s linear infinite;
+}
+
+@keyframes mercOrbit {
+    from { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(100px) rotate(-360deg);}
+}
+
+@keyframes mercX {
+    0% { transform: translateX(100px); }
+    50% { transform: translateX(-100px); }
+    100% { transform: translateX(100px); }
+}
+
+@keyframes mercY {
+    0% { transform: translateY(0px) rotate(7.01deg) scale(1); }
+    25% { z-index: 51; transform: translateY(30px) rotate(7.01deg) scale(1.5); }
+    50% { transform: translateY(0px) rotate(7.01deg) scale(1); }
+    75% { z-index: 49; transform: translateY(-30px) rotate(7.01deg) scale(.75); }
+    100% { transform: translateY(0px) rotate(7.01deg) scale(1); }
+}
+
+
+
+
+
+
+.venusX {
+    pointer-events: none;
+    height: 34px;
+    width: 34px;
+    border-radius: 100%;
+    background-color: burlywood;
+
+    animation: venX 22.468s ease-in-out infinite;
+}
+.venusY {
+    pointer-events: none;
+    position: absolute;
+    top: calc(50vh - 17px);
+    left: calc(50vw - 17px);
+    z-index: 50;
+
+    animation: venY 22.468s cubic-bezier(.5, .3, .5, .7) infinite;
+}
+
+.venusCenter {
+    pointer-events: none;
+    position: absolute;
+    top: calc(50vh - 17px);
+    left: calc(50vw - 17px);
+    z-index: 52;
+}
+.venus {
+    pointer-events: none;
+    height: 34px;
+    width: 34px;
+    border-radius: 100%;
+    background-color: burlywood;
+
+    animation: venOrbit 22.468s linear infinite;
+}
+
+@keyframes venOrbit {
+    from { transform: rotate(0deg) translateX(-138px) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(-138px) rotate(-360deg);}
+}
+
+@keyframes venX {
+    0% { transform: translateX(-138px); }
+    50% { transform: translateX(138px); }
+    100% { transform: translateX(-138px); }
+}
+
+@keyframes venY {
+    0% { transform: translateY(0px) rotate(3.39deg) scale(1); }
+    25% { z-index: 47; transform: translateY(-50px)  rotate(3.39deg) scale(.75); }
+    50% { transform: translateY(0px)  rotate(3.39deg) scale(1); }
+    75% { z-index: 52; transform: translateY(50px)  rotate(3.39deg) scale(1.5); }
+    100% { transform: translateY(0px) rotate(3.39deg) scale(1); }
+}
+
+
+
+
+
+
+.earthX {
+    pointer-events: none;
+    height: 34px;
+    width: 34px;
+    border-radius: 100%;
+    background-color: cornflowerblue;
+
+    animation: eartX 36.526s ease-in-out infinite;
+}
+.earthY {
+    pointer-events: none;
+    position: absolute;
+    top: calc(50vh - 17px);
+    left: calc(50vw - 17px);
+    z-index: 50;
+
+    animation: eartY 36.526s cubic-bezier(.5, .3, .5, .7) infinite;
+}
+
+.earthCenter {
+    pointer-events: none;
+    position: absolute;
+    top: calc(50vh - 17px);
+    left: calc(50vw - 17px);
+    z-index: 54;
+}
+.earth {
+    pointer-events: none;
+    height: 34px;
+    width: 34px;
+    border-radius: 100%;
+    background-color: cornflowerblue;
+
+    animation: eartOrbit 36.526s linear infinite;
+}
+
+@keyframes eartOrbit {
+    from { transform: rotate(0deg) translateX(183px) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(183px) rotate(-360deg);}
+}
+
+@keyframes eartX {
+    0% { transform: translateX(183px); }
+    50% { transform: translateX(-183px); }
+    100% { transform: translateX(183px); }
+}
+
+@keyframes eartY {
+    0% { transform: translateY(0px) scale(1); }
+    25% { z-index: 54; transform: translateY(80px) scale(1.5); }
+    50% { transform: translateY(0px)  rotate(3.39deg) scale(1); }
+    75% { z-index: 45; transform: translateY(-80px) scale(.75); }
+    100% { transform: translateY(0px) scale(1); }
+}
+
+
+
+
+
+
+.marsX {
+    pointer-events: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    background-color: darkorange;
+
+    animation: marX 68.698s ease-in-out infinite;
+}
+.marsY {
+    pointer-events: none;
+    position: absolute;
+    top: calc(50vh - 10px);
+    left: calc(50vw - 10px);
+    z-index: 50;
+
+    animation: marY 68.698s cubic-bezier(.5, .3, .5, .7) infinite;
+}
+
+.marsCenter {
+    pointer-events: none;
+    position: absolute;
+    top: calc(50vh - 10px);
+    left: calc(50vw - 10px);
+    z-index: 56;
+}
+.mars {
+    pointer-events: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    background-color: darkorange;
+    
+    animation: marOrbit 68.698s linear infinite;
+}
+
+@keyframes marOrbit {
+    from { transform: rotate(0deg) translateX(-225px) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(-225px) rotate(-360deg);}
+}
+
+@keyframes marX {
+    0% { transform: translateX(-225px); }
+    50% { transform: translateX(225px); }
+    100% { transform: translateX(-225px); }
+}
+
+@keyframes marY {
+    0% { transform: translateY(0px) rotate(3.39deg) scale(1); }
+    25% { z-index: 43; transform: translateY(-100px)  rotate(3.39deg) scale(.75); }
+    50% { transform: translateY(0px)  rotate(3.39deg) scale(1);}
+    75% { z-index: 56; transform: translateY(100px)  rotate(3.39deg) scale(1.5); }
+    100% { transform: translateY(0px) rotate(3.39deg) scale(1); }
+}
+
+
+
+
+
+
+.beltO {
+    pointer-events: none;
+    position: absolute;
+    height: 590px;
+    width: 590px;
+    top: calc(50vh - 296px);
+    left: calc(50vw - 296px);
+    border: 1px dashed white;
+    border-radius: 100%;
+
+    animation: beltOrbit 70s linear infinite;
+}
+
+.beltOS {
+    pointer-events: none;
+    position: absolute;
+    width: 590px;
+    height: 150px;
+    top: calc(50vh - 76px);
+    left: calc(50vw - 296px);
+    border: 1px dashed white;
+    border-radius: 100%;
+    border-bottom: transparent;
+    border-left: transparent;
+    z-index: 42;
+    transform: rotate(10.62deg);
+}
+
+.beltOSF {
+    pointer-events: none;
+    position: absolute;
+    width: 590px;
+    height: 150px;
+    top: calc(50vh - 76px);
+    left: calc(50vw - 296px);
+    border: 1px dashed white;
+    border-radius: 100%;
+    border-top: transparent;
+    border-right: transparent;
+    z-index: 57;
+    transform: rotate(10.62deg);
+}
+
+.beltT {
+    pointer-events: none;
+    position: absolute;
+    height: 600px;
+    width: 600px;
+    top: calc(50vh - 301px);
+    left: calc(50vw - 301px);
+    border: 1px dashed white;
+    border-radius: 100%;
+
+    animation: beltOrbit 65s linear infinite;
+}
+
+.beltTS {
+    pointer-events: none;
+    position: absolute;
+    width: 600px;
+    height: 160px;
+    top: calc(50vh - 81px);
+    left: calc(50vw - 301px);
+    border: 1px dashed white;
+    border-radius: 100%;
+    border-bottom: transparent;
+    border-left: transparent;
+    z-index: 42;
+    transform: rotate(35.06deg);
+}
+
+.beltTSF {
+    pointer-events: none;
+    position: absolute;
+    width: 600px;
+    height: 160px;
+    top: calc(50vh - 81px);
+    left: calc(50vw - 301px);
+    border: 1px dashed white;
+    border-radius: 100%;
+    border-top: transparent;
+    border-right: transparent;
+    z-index: 57;
+    transform: rotate(35.06deg);
+}
+
+.beltTR {
+    pointer-events: none;
+    position: absolute;
+    height: 610px;
+    width: 610px;
+    top: calc(50vh - 306px);
+    left: calc(50vw - 306px);
+    border: 1px dashed white;
+    border-radius: 100%;
+
+    animation: beltOrbit 72s linear infinite;
+}
+
+.beltTRS {
+    pointer-events: none;
+    position: absolute;
+    width: 610px;
+    height: 170px;
+    top: calc(50vh - 86px);
+    left: calc(50vw - 306px);
+    border: 1px dashed white;
+    border-radius: 100%;
+    border-bottom: transparent;
+    border-left: transparent;
+    z-index: 42;
+    transform: rotate(5.58deg);
+}
+
+.beltTRSF {
+    pointer-events: none;
+    position: absolute;
+    width: 610px;
+    height: 170px;
+    top: calc(50vh - 86px);
+    left: calc(50vw - 306px);
+    border: 1px dashed white;
+    border-radius: 100%;
+    border-top: transparent;
+    border-right: transparent;
+    z-index: 57;
+    transform: rotate(5.58deg);
+}
+
+.beltF {
+    pointer-events: none;
+    position: absolute;
+    height: 620px;
+    width: 620px;
+    top: calc(50vh - 311px);
+    left: calc(50vw - 311px);
+    border: 1px dashed white;
+    border-radius: 100%;
+
+    animation: beltOrbit 78s linear infinite;
+}
+
+.beltFS {
+    pointer-events: none;
+    position: absolute;
+    width: 620px;
+    height: 180px;
+    top: calc(50vh - 91px);
+    left: calc(50vw - 311px);
+    border: 1px dashed white;
+    border-radius: 100%;
+    border-bottom: transparent;
+    border-left: transparent;
+    z-index: 42;
+    transform: rotate(20.53deg);
+}
+
+.beltFSF {
+    pointer-events: none;
+    position: absolute;
+    width: 620px;
+    height: 180px;
+    top: calc(50vh - 91px);
+    left: calc(50vw - 311px);
+    border: 1px dashed white;
+    border-radius: 100%;
+    border-top: transparent;
+    border-right: transparent;
+    z-index: 57;
+    transform: rotate(20.53deg);
+}
+
+@keyframes beltOrbit {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(260deg);}
+}
+
+
+
+
+
+
+.jupiterX {
+    pointer-events: none;
+    height: 90px;
+    width: 90px;
+    border-radius: 100%;
+    background-color: burlywood;
+
+    animation: jupiX 433.271s ease-in-out infinite;
+}
+.jupiterY {
+    pointer-events: none;
+    position: absolute;
+    top: calc(50vh - 45px);
+    left: calc(50vw - 45px);
+    z-index: 58;
+
+    animation: jupiY 433.271s cubic-bezier(.5, .3, .5, .7) infinite;
+}
+
+.jupiterCenter {
+    pointer-events: none;
+    position: absolute;
+    top: calc(50vh - 45px);
+    left: calc(50vw - 45px);
+    z-index: 56;
+}
+.jupiter {
+    pointer-events: none;
+    height: 90px;
+    width: 90px;
+    border-radius: 100%;
+    background-color: burlywood;
+
+    animation: jupiOrbit 433.271s linear infinite;
+}
+
+.jupiterRing {
+    pointer-events: none;
+    position: absolute;
+    height: 212px;
+    width: 0px;
+    left: calc(50% - 1px);
+    top: calc(50% - 107px);
+    border: 1px white solid;
+    border-radius: 100%;
+    transform: rotate(93deg);
+}
+
+.jupiterRings {
+    position: absolute;
+    height: 212px;
+    width: 212px;
+    top: calc(50% - 106px);
+    left: calc(50% - 106px);
+    border-radius: 100%;
+    background: none;
+}
+
+.jOne {
+    position: absolute;
+    height: 120px;
+    width: 120px;
+    top: calc(50% - 90px);
+    left: calc(50% - 90px);
+    border-radius: 100%;
+    border: 30px solid rgba(255, 255, 255, 0.2);
+}
+
+.jTwo {
+    position: absolute;
+    height: 190px;
+    width: 190px;
+    top: calc(50% - 96px);
+    left: calc(50% - 96px);
+    border-radius: 100%;
+    border: 1px solid white;
+}
+
+.jThree {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    top: calc(50% - 106px);
+    left: calc(50% - 106px);
+    border-radius: 100%;
+    border: 6px solid white;
+}
+
+@keyframes jupiOrbit {
+    from { transform: rotate(0deg) translateX(430px) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(430px) rotate(-360deg);}
+}
+
+@keyframes jupiX {
+    0% { transform: translateX(430px); }
+    50% { transform: translateX(-430px); }
+    100% { transform: translateX(430px); }
+}
+
+@keyframes jupiY {
+    0% { transform: translateY(0px) rotate(1.31deg) scale(1); }
+    25% { z-index: 59; transform: translateY(200px)  rotate(1.31deg) scale(1.5); }
+    50% { transform: translateY(0px)  rotate(1.31deg) scale(1);}
+    75% { z-index: 40; transform: translateY(-200px)  rotate(1.31deg) scale(.75); }
+    100% { transform: translateY(0px) rotate(1.31deg) scale(1); }
+}
+
+
+
+.saturnX {
+    pointer-events: none;
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
+    background-color: lightgoldenrodyellow;
+
+    animation: satX 1075.14s ease-in-out infinite;
+}
+.saturnY {
+    pointer-events: none;
+    position: absolute;
+    top: calc(50vh - 40px);
+    left: calc(50vw - 40px);
+    z-index: 58;
+
+    animation: satY 1075.14s cubic-bezier(.5, .3, .5, .7) infinite;
+}
+
+.saturnCenter {
+    pointer-events: none;
+    position: absolute;
+    top: calc(50vh - 40px);
+    left: calc(50vw - 40px);
+    z-index: 58;
+}
+.saturn {
+    pointer-events: none;
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
+    background-color: lightgoldenrodyellow;
+
+    animation: satOrbit 1075.14s linear infinite;
+}
+
+.saturnRing {
+    pointer-events: none;
+    position: absolute;
+    height: 190px;
+    width: 0px;
+    left: calc(50% - 1px);
+    top: calc(50% - 96px);
+    border: 1px white solid;
+    border-radius: 100%;
+    transform: rotate(116deg);
+}
+
+.saturnRings {
+    position: absolute;
+    height: 176px;
+    width: 176px;
+    top: calc(50% - 88px);
+    left: calc(50% - 88px);
+    border-radius: 100%;
+    background: none
+}
+
+.sOne {
+    position: absolute;
+    height: 90px;
+    width: 90px;
+    top: calc(50% - 46px);
+    left: calc(50% - 46px);
+    border-radius: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sTwo {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    top: calc(50% - 51px);
+    left: calc(50% - 51px);
+    border-radius: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sThree {
+    position: absolute;
+    height: 104px;
+    width: 104px;
+    top: calc(50% - 60px);
+    left: calc(50% - 60px);
+    border-radius: 100%;
+    border: 8px solid rgba(255, 255, 255, 0.4);
+}
+
+.sFour {
+    position: absolute;
+    height: 126px;
+    width: 126px;
+    top: calc(50% - 78px);
+    left: calc(50% - 78px);
+    border-radius: 100%;
+    border: 15px solid white;
+}
+
+.sFive {
+    position: absolute;
+    height: 164px;
+    width: 164px;
+    top: calc(50% - 87px);
+    left: calc(50% - 87px);
+    border-radius: 100%;
+    border: 5px solid white;
+}
+
+.sSix {
+    position: absolute;
+    height: 188px;
+    width: 188px;
+    top: calc(50% - 95px);
+    left: calc(50% - 95px);
+    border-radius: 100%;
+    border: 1px solid white;
+}
+
+@keyframes satOrbit {
+    from { transform: rotate(0deg) translateX(-640px) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(-640px) rotate(-360deg);}
+}
+
+@keyframes satX {
+    0% { transform: translateX(-650px); }
+    50% { transform: translateX(650px); }
+    100% { transform: translateX(-650px); }
+}
+
+@keyframes satY {
+    0% { transform: translateY(0px) rotate(2.49deg) scale(1); }
+    25% { z-index: 38; transform: translateY(-220px)  rotate(2.49deg) scale(.75); }
+    50% { transform: translateY(0px)  rotate(2.49deg) scale(1);}
+    75% { z-index: 61; transform: translateY(220px)  rotate(2.49deg) scale(1.5); }
+    100% { transform: translateY(0px) rotate(2.49deg) scale(1); }
+}
+
+
+
+.uranusX {
+    pointer-events: none;
+    height: 56px;
+    width: 56px;
+    border-radius: 100%;
+    background-color: lightseagreen;
+
+    animation: uraX 3068.55s ease-in-out infinite;
+}
+.uranusY {
+    pointer-events: none;
+    position: absolute;
+    top: calc(50vh - 28px);
+    left: calc(50vw - 28px);
+    z-index: 58;
+
+    animation: uraY 3068.55s cubic-bezier(.5, .3, .5, .7) infinite;
+}
+
+.uranusCenter {
+    pointer-events: none;
+    position: absolute;
+    top: calc(50vh - 28px);
+    left: calc(50vw - 28px);
+    z-index: 60;
+}
+.uranus {
+    pointer-events: none;
+    height: 56px;
+    width: 56px;
+    border-radius: 100%;
+    background-color: lightseagreen;
+
+    animation: uraOrbit 3068.55s linear infinite;
+}
+
+.uranusRing {
+    pointer-events: none;
+    position: absolute;
+    height: 108px;
+    width: 0px;
+    left: calc(50% - 1px);
+    top: calc(50% - 55px);
+    border: 1px white solid;
+    border-radius: 100%;
+    transform: rotate(188deg);
+}
+
+.uranusRings {
+    pointer-events: none;
+    position: absolute;
+    height: 108px;
+    width: 108px;
+    left: calc(50% - 54px);
+    top: calc(50% - 54px);
+    border-radius: 100%;
+}
+
+.uOne {
+    pointer-events: none;
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    left: calc(50% - 41px);
+    top: calc(50% - 41px);
+    border-radius: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.uTwo {
+    pointer-events: none;
+    position: absolute;
+    height: 88px;
+    width: 88px;
+    left: calc(50% - 46px);
+    top: calc(50% - 46px);
+    border-radius: 100%;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.uThree {
+    pointer-events: none;
+    position: absolute;
+    height: 96px;
+    width: 96px;
+    left: calc(50% - 50px);
+    top: calc(50% - 50px);
+    border-radius: 100%;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.uFour {
+    pointer-events: none;
+    position: absolute;
+    height: 108px;
+    width: 108px;
+    left: calc(50% - 55px);
+    top: calc(50% - 55px);
+    border-radius: 100%;
+    border: 1px solid white;
+}
+
+@keyframes uraOrbit {
+    from { transform: rotate(0deg) translateX(800px) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(800px) rotate(-360deg);}
+}
+
+@keyframes uraX {
+    0% { transform: translateX(800px); }
+    50% { transform: translateX(-800px); }
+    100% { transform: translateX(800px); }
+}
+
+@keyframes uraY {
+    0% { transform: translateY(0px) rotate(.77deg) scale(1); }
+    25% { z-index: 63; transform: translateY(240px)  rotate(.77deg) scale(1.5); }
+    50% { transform: translateY(0px)  rotate(.77deg) scale(1);}
+    75% { z-index: 36; transform: translateY(-240px)  rotate(.77deg) scale(.75); }
+    100% { transform: translateY(0px) rotate(.77deg) scale(1); }
+}
+
+
+
+
+
+.neptuneX {
+    pointer-events: none;
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    background-color: royalblue;
+
+    animation: neptX 6015.56s ease-in-out infinite;
+}
+.neptuneY {
+    pointer-events: none;
+    position: absolute;
+    top: calc(50vh - 25px);
+    left: calc(50vw - 25px);
+    z-index: 58;
+
+    animation: neptY 6015.56s cubic-bezier(.5, .3, .5, .7) infinite;
+}
+
+.neptuneCenter {
+    pointer-events: none;
+    position: absolute;
+    top: calc(50vh - 25px);
+    left: calc(50vw - 25px);
+    z-index: 60;
+}
+.neptune {
+    pointer-events: none;
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    background-color: royalblue;
+
+    animation: neptOrbit 6015.56s linear infinite;
+}
+
+.neptuneRing {
+    pointer-events: none;
+    position: absolute;
+    height: 110px;
+    width: 0px;
+    left: calc(50% - 1px);
+    top: calc(50% - 56px);
+    border: 1px white solid;
+    border-radius: 100%;
+    transform: rotate(118deg);
+}
+
+.neptuneRings {
+    pointer-events: none;
+    position: absolute;
+    height: 110px;
+    width: 110px;
+    left: calc(50% - 55px);
+    top: calc(50% - 55px);
+    border: none;
+    border-radius: 100%;
+}
+
+.nOne {
+    pointer-events: none;
+    position: absolute;
+    height: 76px;
+    width: 76px;
+    left: calc(50% - 39px);
+    top: calc(50% - 39px);
+    border: 1px white solid;
+    border-radius: 100%;
+}
+
+.nTwo {
+    pointer-events: none;
+    position: absolute;
+    height: 94px;
+    width: 94px;
+    left: calc(50% - 50px);
+    top: calc(50% - 50px);
+    border: 3px rgba(255, 255, 255, 0.6) solid;
+    border-radius: 100%;
+}
+
+.nThree {
+    pointer-events: none;
+    position: absolute;
+    height: 110px;
+    width: 110px;
+    left: calc(50% - 56px);
+    top: calc(50% - 56px);
+    border: 1px white solid;
+    border-radius: 100%;
+}
+
+@keyframes neptOrbit {
+    from { transform: rotate(0deg) translateX(-920px) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(-920px) rotate(-360deg);}
+}
+
+@keyframes neptX {
+    0% { transform: translateX(-920px); }
+    50% { transform: translateX(920px); }
+    100% { transform: translateX(-920px); }
+}
+
+@keyframes neptY {
+    0% { transform: translateY(0px) rotate(1.77deg) scale(1); }
+    25% { z-index: 36; transform: translateY(-260px)  rotate(1.77deg) scale(.75); }
+    50% { transform: translateY(0px)  rotate(1.77deg) scale(1);}
+    75% { z-index: 63; transform: translateY(260px)  rotate(1.77deg) scale(1.5); }
+    100% { transform: translateY(0px) rotate(1.77deg) scale(1); }
+}

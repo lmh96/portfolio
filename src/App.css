@@ -1,23 +1,12 @@
 .App {
-  text-align: center;
-  overflow: hidden;
-  height: 100vh;
   width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
   overflow: hidden;
-  color: white;
-  background: black;
+  background-color: #1b1b1b;
 }
 
-@media(prefers-color-scheme: light) {
-  .App {
-      color: black;
-      background: white;
-  }
-}
-
-@media(prefers-color-scheme: dark) {
-  .App {
-      color: white;
-      background: black;
-  }
+.viewChangeButton {
+  position: absolute;
 }
