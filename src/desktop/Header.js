@@ -20,7 +20,7 @@ function Header(props) {
                 :
                 null
             }
-            <div className="headerNavContainer" style={props.showMenu ? { maxHeight: 257, height: 257 } : { maxHeight: 0, height: 0 }}>
+            <div className="headerNavContainer" style={props.showMenu ? { maxHeight: 260, height: 260 } : { maxHeight: 0, height: 0 }}>
                 <div className="linkedin-and-git">
                     <a className="git" href="https://github.com/lmh96" target="__blank"><i className="fab fa-github-square"></i></a>
                     <a className="linkedin" href="https://www.linkedin.com/in/logan-hill-86828b166/" target="__blank"><i className="fab fa-linkedin"></i></a>
