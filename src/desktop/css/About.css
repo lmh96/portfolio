@@ -30,7 +30,7 @@
 @media (min-height: 320px) and (max-height: 768px) {
     .about {
         margin-top: 80px;
-        height: calc(100vh - 80px);
+        max-height: calc(100vh - 80px);
     }
 
     .aboutContent {
