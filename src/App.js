@@ -23,18 +23,14 @@ class App extends React.Component {
       showPluto: false,
       aboutMe:
         <div>
-          Currently a student at Georgia Tech full-stack development boot camp, previously a student at Kennesaw State for
-          Software Engineering.<br></br><br></br><br></br>
+          Recent graduate of Georgia Tech full-stack development boot camp, attended Kennesaw State for
+          Software Engineering. However I do need approcimately 20 more credit hours to complete my degree.<br></br><br></br>
 
           I started teaching myself to code in middle school (2008) with java, and have enjoyed it ever since! I've made just
           about every type of project I could think to make, from video games to websites and mobile apps, and I've
-          messed around with more languages than I care to list. However I'm proficient in C#, Java, and JavaScript,
-          as well as ASP.NET and HTML.<br></br><br></br><br></br>
+          messed around with more languages than I care to list.<br></br><br></br>
 
-          As of right now, my best languages are C#, ASP.NET, HTML, and JavaScript, but I'm looking in to more on a regular basis.
-          My current side project is the angular web framework.<br></br><br></br><br></br>
-
-          Currently looking for a job in full-stack development in Atlanta, or the Atlanta area.
+          I am currently looking for a full-stack development position in Atlanta, or the North Metro Atlanta area.<br></br><br></br><br></br><br></br>
         </div>
       ,
     }
