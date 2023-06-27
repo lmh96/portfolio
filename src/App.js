@@ -28,13 +28,11 @@ class App extends React.Component {
           user data from our legacy systems into our newer systems.
       
           Previous graduate of Georgia Tech full-stack development boot camp, attended Kennesaw State for
-          Software Engineering. However I do need approcimately 20 more credit hours to complete my degree.<br></br><br></br>
+          Software Engineering. However I do need approximately 20 more credit hours to complete my degree.<br></br><br></br>
 
           I started teaching myself to code in middle school (2008) with java, and have enjoyed it ever since! I've made just
           about every type of project I could think to make, from video games to websites and mobile apps, and I've
-          messed around with more languages than I care to list.<br></br><br></br>
-
-          I am currently looking for a full-stack development position in Atlanta, or the North Metro Atlanta area.<br></br><br></br><br></br><br></br>
+          messed around with more languages than I can list off of the top of my head.<br></br><br></br><br></br><br></br><br></br><br></br>
         </div>
       ,
     }
