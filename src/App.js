@@ -23,7 +23,11 @@ class App extends React.Component {
       showPluto: false,
       aboutMe:
         <div>
-          Recent graduate of Georgia Tech full-stack development boot camp, attended Kennesaw State for
+          I am a Software Engineer at PRGX in the atlanta area, primarily working with Java and Angular to update and mantain 
+          backend and front end services. I previously worked on a data migration tool using C# and Entity framework to transfer 
+          user data from our legacy systems into our newer systems.
+      
+          Previous graduate of Georgia Tech full-stack development boot camp, attended Kennesaw State for
           Software Engineering. However I do need approcimately 20 more credit hours to complete my degree.<br></br><br></br>
 
           I started teaching myself to code in middle school (2008) with java, and have enjoyed it ever since! I've made just
